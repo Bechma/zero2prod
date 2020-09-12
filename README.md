@@ -22,7 +22,7 @@ Quoted from his anouncement:
 3. Sign up a new subscriber:
     - [Choosing a web framework(in 2020)](https://lpalmieri.com/posts/2020-07-04-choosing-a-rust-web-framework-2020-edition/)
     - [How To Bootstrap A Rust Web API From Scratch](https://lpalmieri.com/posts/2020-08-09-zero-to-production-3-how-to-bootstrap-a-new-rust-web-api-from-scratch/) (end code is in branch -> [chapter/3.0](https://github.com/Bechma/zero2prod/tree/chapter/3.0))
-    - [HTML forms, Databases, Integration tests](https://lpalmieri.com/posts/2020-08-31-zero-to-production-3-5-html-forms-databases-integration-tests/)
+    - [HTML forms, Databases, Integration tests](https://lpalmieri.com/posts/2020-08-31-zero-to-production-3-5-html-forms-databases-integration-tests/) (end code is in branch -> [chapter/3.5](https://github.com/Bechma/zero2prod/tree/chapter/3.5))
 4. Publish A Newsletter Issue
 5. Logging
 6. Reject Invalid Subscribers
