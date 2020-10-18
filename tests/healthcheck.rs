@@ -1,12 +1,21 @@
-use zero2prod::configuration::{DatabaseSettings, get_configuration};
-use zero2prod::startup::run;
-use sqlx::{Connection, PgConnection, PgPool, Executor};
+use sqlx::{Connection, Executor, PgConnection, PgPool};
 use std::net::TcpListener;
 use uuid::Uuid;
+use zero2prod::configuration::{get_configuration, DatabaseSettings};
+use zero2prod::startup::run;
+use zero2prod::telemetry::{get_subscriber, init_subscriber};
 
 pub struct TestApp {
     pub address: String,
     pub db_pool: PgPool,
+}
+
+lazy_static::lazy_static! {
+    static ref TRACING: () = {
+        let filter = if std::env::var("TEST_LOG").is_ok() { "debug" } else { "" };
+        let subscriber = get_subscriber("test".into(), filter.into());
+        init_subscriber(subscriber);
+    };
 }
 
 // The function is asynchronous now!
@@ -19,7 +28,7 @@ async fn spawn_app() -> TestApp {
     configuration.database.database_name = Uuid::new_v4().to_string();
     let connection_pool = configure_database(&configuration.database).await;
     // let connection_pool = PgPool::connect(&configuration.database.connection_string()).await.expect("Failed to connect to Postgres.");
-    
+
     let server = run(listener, connection_pool.clone()).expect("Failed to bind address");
     let _ = tokio::spawn(server);
     TestApp {

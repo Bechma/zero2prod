@@ -1,3 +1,3 @@
-## Zero To Production #3.5: HTML forms, Databases, Integration tests
+## Zero To Production #4: Are we observable yet? An introduction to Rust telemetry
 
-This is the end state of the [lpalmieri's article](https://www.lpalmieri.com/posts/2020-08-31-zero-to-production-3-5-html-forms-databases-integration-tests/).
+This is the end state of the [lpalmieri's article](https://www.lpalmieri.com/posts/2020-09-27-zero-to-production-4-are-we-observable-yet/).
