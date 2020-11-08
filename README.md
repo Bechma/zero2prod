@@ -1,4 +1,4 @@
-## Zero To Production #4: Are we observable yet? An introduction to Rust telemetry
+## Zero To Production
 
 This repository is a compilation of the end result code from Luca Palmieri "Zero To Production" books' serie. 
 Quoted from his anouncement:
