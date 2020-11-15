@@ -7,6 +7,9 @@ pub fn get_configuration() -> Result<Settings, config::ConfigError> {
     let base_path = std::env::current_dir().expect("Failed to determine the current directory");
     let configuration_directory = base_path.join("configuration");
 
+    // Read the "default" configuration file
+    settings.merge(config::File::from(configuration_directory.join("base")).required(true))?;
+
     // Detect the running environment.
     // Default to `local` if unspecified.
     let environment: Environment = std::env::var("APP_ENVIRONMENT")

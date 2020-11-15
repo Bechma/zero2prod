@@ -11,16 +11,19 @@ DB_NAME="${POSTGRES_DB:=newsletter}"
 # Check if a custom port has been set, otherwise default to '5432'
 DB_PORT="${POSTGRES_PORT:=5432}"
 
-# Launch postgres using Docker
-docker run \
-  -e POSTGRES_USER=${DB_USER} \
-  -e POSTGRES_PASSWORD=${DB_PASSWORD} \
-  -e POSTGRES_DB=${DB_NAME} \
-  -p "${DB_PORT}":5432 \
-  --name postgresdb \
-  -d postgres \
-  postgres -N 1000 \
-  2>/dev/null || docker start postgresdb
+if [[ -z "${SKIP_DOCKER}" ]]
+then
+  # Launch postgres using Docker
+  docker run \
+    -e POSTGRES_USER=${DB_USER} \
+    -e POSTGRES_PASSWORD=${DB_PASSWORD} \
+    -e POSTGRES_DB=${DB_NAME} \
+    -p "${DB_PORT}":5432 \
+    --name postgresdb \
+    -d postgres \
+    postgres -N 1000 \
+    2>/dev/null || docker start postgresdb
+fi
 
 
 until PGPASSWORD="${DB_PASSWORD}" psql -h "localhost" -U "${DB_USER}" -p "${DB_PORT}" -d "postgres" -c '\q'; do
