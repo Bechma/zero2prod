@@ -16,8 +16,7 @@ async fn main() -> std::io::Result<()> {
         .await
         .expect("Failed to connect to the database");
     run(
-        TcpListener::bind(address)
-        .expect("Failed to bind port 8000"),
+        TcpListener::bind(address).expect("Failed to bind port 8000"),
         connection,
     )?
     .await

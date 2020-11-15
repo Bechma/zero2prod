@@ -1,6 +1,5 @@
 use std::convert::{TryFrom, TryInto};
 
-
 pub fn get_configuration() -> Result<Settings, config::ConfigError> {
     // Initialise our configuration reader
     let mut settings = config::Config::default();
