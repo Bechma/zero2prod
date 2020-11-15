@@ -24,7 +24,7 @@ Quoted from his anouncement:
     - [How To Bootstrap A Rust Web API From Scratch](https://lpalmieri.com/posts/2020-08-09-zero-to-production-3-how-to-bootstrap-a-new-rust-web-api-from-scratch/) (end code is in branch -> [chapter/3.0](https://github.com/Bechma/zero2prod/tree/chapter/3.0))
     - [HTML forms, Databases, Integration tests](https://lpalmieri.com/posts/2020-08-31-zero-to-production-3-5-html-forms-databases-integration-tests/) (end code is in branch -> [chapter/3.5](https://github.com/Bechma/zero2prod/tree/chapter/3.5))
 4. [Telemetry](https://www.lpalmieri.com/posts/2020-09-27-zero-to-production-4-are-we-observable-yet/)
-5. Go Live
+5. [Go Live](https://www.lpalmieri.com/posts/2020-11-01-zero-to-production-5-how-to-deploy-a-rust-application/)
 6. Publish A Newsletter Issue
 7. Reject Invalid Subscribers
 8. Survive Delivery Failures
